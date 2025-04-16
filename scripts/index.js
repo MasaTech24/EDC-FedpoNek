@@ -126,7 +126,7 @@ function signOutUser(){
     sessionStorage.setItem('isLoggedIn', 'false');
     localStorage.removeItem('userId')
     updateUI(null);
-    window.location.href = '/'
+    window.location.href = 'index.html'
   }) .catch(() => {
     console.error('Error signing Out:', error.message);
   })
