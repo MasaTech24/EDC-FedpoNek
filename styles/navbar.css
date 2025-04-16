@@ -109,7 +109,59 @@ nav ul li a:hover::before {
 .active::after{
   width: 100%;
 }
-
+.cta-sign-in-mobile{
+  display: none;
+}
+.cta-sign-out-mobile{
+  display: none; 
+  align-items: center; 
+  justify-content: center;
+}
+.profile-pop-up-container{
+  display: none;
+  position: relative;
+}
+.profile-pop-up-container .nav-fa-user{
+  font-size: 20px; 
+  border: 2px solid black; 
+  border-radius: 50%; height: 40px; 
+  width: 40px; 
+  display: flex; align-items: center; 
+  justify-content: center; 
+  cursor: pointer;
+}
+.profile-pop-up{
+  background-color: white;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  position: absolute;
+  right: 0;
+  top: 63.3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: none;
+  width: 200px;
+}
+.pop-up-details{
+  display: flex; 
+  align-items: center; 
+  column-gap: 10px;
+}
+.pop-up-details p{
+  max-width: 10px;
+}
+.pop-up{
+  display: flex;
+}
+.profile-pop-up p{
+  font-family: var(--font);
+  font-size: 16px;
+  font-style: normal;
+  font-family: 400;
+  max-width: 90px;
+}
 /* tablet screen size for navigation */
 @media screen and (max-width: 768px){
   header {
@@ -171,7 +223,7 @@ nav ul li a:hover::before {
     padding: 10px;
   }
   nav li {
-    padding:60px 15px;
+    padding:20px 35px;
     border-bottom: 1px solid rgba(197, 195, 195, 0.1);
     width: 100%;
     margin-bottom: 15px;
@@ -181,6 +233,17 @@ nav ul li a:hover::before {
    font-size: 24px;
    width: 100%;
    color: white;
+  }
+  .profile-pop-up-container,
+  .cta-sign-in{
+    display: none;
+  }
+  .cta-sign-in-mobile,
+  .cta-sign-out-mobile{
+    display: block;
+    background-color: var(--background);
+    color: var(--color);
+    width: 100%;
   }
 }
 
@@ -198,7 +261,7 @@ nav ul li a:hover::before {
     background-color: #051924;
   }
   nav li {
-    padding: 25px 15px;
+    padding: 15px 5px;
     margin-bottom: 15px;
   }
 }

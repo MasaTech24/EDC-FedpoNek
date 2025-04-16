@@ -46,8 +46,35 @@
         <li><a href="gallery.html" id="product-link">Gallery</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
+
+        <button id="js-sign-in-mobile"  class="cta-sign-in-mobile">Sign In</button>
+
+        <button id="js-sign-out-mobile" class="cta-sign-out-mobile">Sign Out</button>
+
       </ul>
     </nav>
+
+    <button id="js-sign-in" class="cta-sign-in">Sign In</button>
+
+    <div id="js-popped-up" class="profile-pop-up-container">
+      <i class="nav-fa-user fa-solid fa-user" onclick="
+        const profilePopup = document.getElementById('js-pop-up')
+        profilePopup.classList.toggle('pop-up')
+        "></i>
+
+      <div class="profile-pop-up" id="js-pop-up">
+        <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+          <p id="js-user-dispaly-fullname">Full Name</p>
+        </div>
+
+         <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+           <p id="js-user-email">user1@gmaiddddddl.com</p>
+         </div>
+        <button id="js-sign-out" style="display: flex; align-items: center; justify-content: center;">Sign Out</button>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -66,32 +93,7 @@
         <p class="features-p">Our center offers a wide range of practical skills training and services designed to prepare students for successful entrepreneurship in various fields.</p>
       </div>
 
-      <div class="features-cards">
-        <div class="card1">
-          <div class="icon-div">
-            <i class="fa-solid fa-code"></i>
-          </div>
-          <h3>Digital Skills Training</h3>
-          <p>Learn modern digital skills including web development, digital marketing, and data analysis to succeed in today's digital economy.
-          </p>
-        </div>
 
-        <div class="card2">
-          <div class="icon-div">
-            <i class="fa-solid fa-briefcase"></i>
-          </div>
-          <h3>Business Management</h3>
-          <p>Master the essentials of business management, including planning, marketing, accounting, and operational strategies.</p>
-        </div>
-
-        <div class="card3">
-          <div class="icon-div">
-            <i class="fa-solid fa-user"></i>
-          </div>
-          <h3>Entrepreneurship Workshops</h3>
-          <p>Participate in hands-on workshops designed to develop your entrepreneurial mindset and prepare you for business success.</p>
-        </div>
-      </div>
 
       <div class="features-cards">
         <div class="card1">
@@ -121,7 +123,34 @@
         </div>
       </div>
 
-      <div class="features-cards">
+      <div class="features-cards" id="skills-list">
+        <div class="card1">
+          <div class="icon-div">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3>Digital Skills Training</h3>
+          <p>Learn modern digital skills including web development, digital marketing, and data analysis to succeed in today's digital economy.
+          </p>
+        </div>
+
+        <div class="card2">
+          <div class="icon-div">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <h3>Business Management</h3>
+          <p>Master the essentials of business management, including planning, marketing, accounting, and operational strategies.</p>
+        </div>
+
+        <div class="card3">
+          <div class="icon-div">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h3>Entrepreneurship Workshops</h3>
+          <p>Participate in hands-on workshops designed to develop your entrepreneurial mindset and prepare you for business success.</p>
+        </div>
+      </div>
+
+      <!-- <div class="features-cards">
         <div class="card1">
           <div class="icon-div">
             <i class="fa-solid fa-pen-nib"></i>
@@ -146,6 +175,10 @@
           <h3>Market Research</h3>
           <p>Develop skills in market research, data collection, consumer behavior analysis, and competitive research to identify business opportunities.</p>
         </div>
+      </div> -->
+
+      <div class="add-skill-div">
+        <button id="js-add-skill">Add Skill </button>
       </div>
     </section>
 
@@ -221,6 +254,99 @@
       </div>
     </section>
     
+
+    <!-- overlay add skill  -->
+
+    <div class="add-skill-overlay" id="js-popup">
+      <div class="overlay-container">
+        <div class="overlay-header">
+          <h3>Add New Skill</h3>
+          <i class="fa-solid fa-xmark" id="js-close-icon"></i>
+        </div>
+
+        <form id="add-skills-form">
+          <div class="skill-title-div">
+            <label>Select a skill*</label>
+            <!-- <input type="text" placeholder="Web Development, Leadership, etc"> -->
+            <select id="skill-select">
+              <option value="Hospitality & Catering">Hospitality & Catering</option>
+              <option value="Spice Production">Spice Production</option>
+              <option value="Electrical Installation">Electrical Installation</option>
+              <option value="Tv Satelite Installation & Maintenance">Tv Satelite Installation & Maintenance</option>
+              <option value="Binding & Lithography">Binding & Lithography</option>
+              <option value="Screen Printing">Screen Printing</option>
+              <option value="Computer Networking">Computer Networking</option>
+              <option value="Generator Repair/Maintenance">Generator Repair/Maintenance</option>
+              <option value="Computer Maintenance">Computer Maintenance</option>
+              <option value="Fabric Design/Tie& Dye Batrik">Fabric Design/Tie& Dye Batrik</option>
+              <option value="Computer Dided Design">Computer Dided Design</option>
+              <option value="Land Scaping: Floor treatment, Increte, Polishing, Kepe, Interlock, Floor Maintenance">Land Scaping: Floor treatment, Increte, Polishing, Kepe, Interlock, Floor Maintenance</option>
+              <option value="Animal Health and Production Technology">Animal Health and Production Technology</option>
+              <option value="Cosmetology, Chemical & Allied Products">Cosmetology, Chemical & Allied Products</option>
+              <option value="Leather Works">Leather Works</option>
+              <option value="Polish Production">Polish Production</option>
+              <option value="CCTV/Security Camera/Networking">CCTV/Security Camera/Networking</option>
+              <option value="Foam Production">Foam Production</option>
+              <option value="Electronics Maintenance">Electronics Maintenance</option>
+              <option value="Airconditioning/Refrigeration Repair">Airconditioning/Refrigeration Repair</option>
+              <option value="Hair Dressing, Preparation and Beauty Therapy/Hat making/Turban Fascinator">Hair Dressing, Preparation and Beauty Therapy/Hat making/Turban Fascinator</option>
+              <option value="Phone Repair/Maintenance">Phone Repair/Maintenance</option>
+              <option value="Photograph & Video Coverage">Photograph & Video Coverage</option>
+              <option value="Barbing">Barbing</option>
+              <option value="Music -Entertainment (Rapping/MC/DJ)">Music -Entertainment (Rapping/MC/DJ)</option>
+              <option value="Decoration /Event Management">Decoration /Event Management</option>
+              <option value="Fresh Fruit Juice Production">Fresh Fruit Juice Production</option>
+              <option value="Ice Cream">Ice Cream</option>
+              <option value="Beverage Production">Beverage Production</option>
+              <option value="Ceramics Production">Ceramics Production</option>
+              <option value="Nylon Production">Nylon Production</option>
+              <option value="Solar Panel Installation">Solar Panel Installation</option>
+              <option value="Battery Cage Production">Battery Cage Production</option>
+              <option value="Flour Production & Processing">Flour Production & Processing</option>
+              <option value="Confectionaries">Confectionaries</option>
+              <option value="Bread Production">Bread Production</option>
+              <option value="Bead Making/Knitting">Bead Making/Knitting</option>
+              <option value="Automobile Maintenance Using Modern Tech">Automobile Maintenance Using Modern Tech</option>
+              <option value="Auto Security Tracking">Auto Security Tracking</option>
+              <option value="Fashion Design/Tailoring">Fashion Design/Tailoring</option>
+              <option value="Decoration /Event Management">Decoration /Event Management</option>
+              <option value="Web Design, Hosting">Web Design, Hosting</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="Paint Production">Paint Production</option>
+              <option value="Web & Mobile App">Web & Mobile App</option>
+            </select>
+          </div>
+
+          <div class="skill-description-div">
+            <label>Description*</label>
+            <textarea id="description-inp" placeholder="Describe your skill and experienced"></textarea>
+          </div>
+
+          <div class="skill-icon-div">
+            <label>Icon*</label>
+            <select id="icon-select">
+              <option value="fa-solid fa-code">Code</option>
+              <option value="fa-solid fa-paint-brush">Briefcase</option>
+              <option value="fa-solid fa-chart-line">Design</option>
+              <option value="fa-solid fa-utensils">Hospitality </option>
+              <option value="fa-solid fa-pepper-hot">Spice Production</option>
+              <option value="fa-solid fa-bolt">Electrical Installation</option>
+              <option value="fa-solid fa-satellite">Satelite Installation</option>
+              <option value="fa-solid fa-book">Binding </option>
+              <option value="fa-solid fa-print">Printing </option>
+              <option value="fa-solid fa-network-wired">Networking </option>
+              <option value="fa-solid fa-cog">Repair/Maintenance </option>
+              <option value="fa-solid fa-laptop-medical">Computer Maintenance </option>
+              <option value="fa-solid fa-tshirt">Fabric Design </option>
+              <option value="fa-solid fa-computer">Computer Design </option>
+              <option value="fa-solid fa-tree">Land Scaping </option>
+            </select>
+          </div>
+
+          <button type="submit">Save Skill</button>
+        </form>
+      </div>
+    </div>
   </main>
 
   <!-- footer section of this page  -->
@@ -240,22 +366,22 @@
           Quick Links
         </h1>
         <p class="footer-contact-p">
-          <a href="index.html"> Home</a>
+          <a href="/index.html"> Home</a>
         </p>
         <p class="footer-contact-p">
-          <a href="about.html"> About Us</a>
+          <a href="/about.html"> About Us</a>
         </p>
         <p class="footer-contact-p">
-          <a href="services.html"> Services</a>
+          <a href="/services.html"> Services</a>
         </p>
         <p class="footer-contact-p">
-          <a href="gallery.html"> Gallery</a>
+          <a href="/gallery.html"> Gallery</a>
         </p>
         <p class="footer-contact-p">
-          <a href="faq.html"> FAQ</a>
+          <a href="/faq.html"> FAQ</a>
         </p>
         <p class="footer-contact-p">
-          <a href="contact.html"> Contact</a>
+          <a href="/contact.html"> Contact</a>
         </p>
       </div>
 
@@ -317,5 +443,7 @@
   </footer>
 
   <script src="scripts/navbar.js"></script>
+  <script src="scripts/skills.js"></script>
+  <script type="module" src="scripts/index.js"></script>
 </body>
 </html>

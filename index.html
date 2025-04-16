@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EDC FPN0</title>
+  <title>EDC FedpoNek</title>
   <link rel="icon" href="images/dunav logo.svg" type="image/x-icon">
   <link rel="stylesheet" href="styles/navbar.css">
   <link rel="stylesheet" href="styles/style.css">
@@ -89,8 +89,35 @@
         <li><a href="gallery.html" id="product-link">Gallery</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
+        
+
+        <button id="js-sign-in-mobile"  class="cta-sign-in-mobile">Sign In</button>
+
+        <button id="js-sign-out-mobile" class="cta-sign-out-mobile">Sign Out</button>
+
       </ul>
     </nav>
+    <button id="js-sign-in" class="cta-sign-in">Sign In</button>
+
+    <div id="js-popped-up" class="profile-pop-up-container">
+      <i class="nav-fa-user fa-solid fa-user" onclick="
+        const profilePopup = document.getElementById('js-pop-up')
+        profilePopup.classList.toggle('pop-up')
+        "></i>
+
+      <div class="profile-pop-up" id="js-pop-up">
+        <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+          <p id="js-user-dispaly-fullname"></p>
+        </div>
+
+         <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+           <p id="js-user-email"></p>
+         </div>
+        <button id="js-sign-out" style="display: flex; align-items: center; justify-content: center;">Sign Out</button>
+      </div>
+    </div>
   </header>
 
   <!-- main content of this work -->
@@ -101,18 +128,21 @@
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide" >
+
             <div style="width: 100%; height: 100%;"  class="vd-container" style="overflow: hidden;">
-              <video width="100%" height="100%"  autoplay loop style="object-fit: cover;">
+              <video width="100%" height="100%"  autoplay loop>
                 <source  src="images/hero.mp4" type="video/mp4">  
               </video>
             </div>
+            
+
             <div class="overlay">
               <h2>Entrepreneurship Development Center <br>
                 <span style="color: hsl(221, 83%, 53%);">Federal Polytechnic Nekede</span></h2>
               <p>Transforming ideas into successful businesses through practical skills, innovation, and hands-on training for students and aspiring entrepreneurs.</p>
               <!-- <p> Owerri, Imo State</p> -->
                <div class="btn-container">
-                <button class="js-abt" onclick="window.location.href ='services.html'">Explore Our Programs</button>
+                <button class="js-abt" id="js-get-started">Get Started</button>
                </div>
             </div>
           </div>
@@ -127,7 +157,7 @@
         <p class="features-p">Discover the range of skills and training programs offered at the Entrepreneurship Development Center.</p>
       </div>
 
-      <div class="features-cards">
+      <div class="features-cards" id="skills-list">
         <div class="card1">
           <div class="icon-div">
             <i class="fa-solid fa-book-open"></i>
@@ -155,7 +185,7 @@
       </div>
 
       <div class="services-link">
-        <a href="services.html">View All Services</a>
+        <a href="/services.html">View All Services</a>
         <i class="fa-solid fa-arrow-right" fill="#58b7ee"></i>
       </div>
     </section>
@@ -211,16 +241,6 @@
 
         <div class="why-choose-us-col">
           <!-- <div class="refinery-img-div"> -->
-          <!-- <img src="images/tank3.jpg" alt="" class="why-choose-us-img" 
-            data-aos="zoom-out-left"
-            data-aos-offset="0"
-            data-aos-delay="20"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-once="false"
-            data-aos-anchor-placement="top-center"
-          > -->
 
           <div style="width: 100%;">
             <video  autoplay loop class="why-choose-us-img">
@@ -257,7 +277,7 @@
         <h2>
           Do you have any questions or inquiry?
         </h2>
-        <button onclick="window.location.href='/contact.html'" >
+        <button onclick="window.location.href='contact.html'" >
           <!-- <img src="images/msg.png" alt="" width="15px"> -->
           <span>Contact Us</span>
         </button>
@@ -361,7 +381,7 @@
 
 
   <script src="scripts/navbar.js"></script>
-  <script src="scripts/index.js"></script>
+  <script type="module" src="scripts/index.js"></script>
 
 
   <!--Start of Tawk.to Script-->
@@ -380,6 +400,7 @@
 
   <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
   <script src="https://static.elfsight.com/platform/platform.js" async></script>
+
   <div class="elfsight-app-52ec13b8-24dc-4194-9d05-109fa68e6cb7" data-elfsight-app-lazy></div>
 </body>
 </html>

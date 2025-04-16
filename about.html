@@ -45,8 +45,34 @@
         <li><a href="gallery.html" id="product-link">Gallery</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <button id="js-sign-in-mobile"  class="cta-sign-in-mobile">Sign In</button>
+  
+        <button id="js-sign-out-mobile" class="cta-sign-out-mobile">Sign Out</button>
       </ul>
+
     </nav>
+    
+    <button id="js-sign-in" class="cta-sign-in">Sign In</button>
+
+    <div id="js-popped-up" class="profile-pop-up-container">
+      <i class="nav-fa-user fa-solid fa-user" onclick="
+        const profilePopup = document.getElementById('js-pop-up')
+        profilePopup.classList.toggle('pop-up')
+        "></i>
+
+      <div class="profile-pop-up" id="js-pop-up">
+        <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+          <p id="js-user-dispaly-fullname">Full Name</p>
+        </div>
+
+         <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+           <p id="js-user-email">user1@gmaiddddddl.com</p>
+         </div>
+        <button id="js-sign-out" style="display: flex; align-items: center; justify-content: center;">Sign Out</button>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -68,7 +94,7 @@
           </h2>
 
           <p class="p-why-choose-us" >
-            The Entrepreneurship Development Center at Federal Polytechnic Nekede was established to address the growing need for practical entrepreneurial skills among students. As an institution committed to producing job creators rather than job seekers, the Federal Polytechnic Nekede initiated this center to equip students with hands-on skills and knowledge necessary for successful business ventures.
+            The Entrepreneurship Development Center at Federal Polytechnic Nekede was established to address the growing need for practical entrepreneurial skills among group 2 students in EED Practical. As an institution committed to producing job creators rather than job seekers, the Federal Polytechnic Nekede initiated this center to equip students with hands-on skills and knowledge necessary for successful business ventures.
             <br>
             <br>
             Since our inception, we have trained thousands of students across various disciplines, helping them develop marketable skills, create business plans, and launch successful startups. Our comprehensive approach combines theoretical knowledge with practical experience, ensuring that our graduates are well-prepared to face the challenges of entrepreneurship in Nigeria's dynamic economy.
@@ -152,22 +178,22 @@
           Quick Links
         </h1>
         <p class="footer-contact-p">
-          <a href="index.html"> Home</a>
+          <a href="/index.html"> Home</a>
         </p>
         <p class="footer-contact-p">
-          <a href="about.html"> About Us</a>
+          <a href="/about.html"> About Us</a>
         </p>
         <p class="footer-contact-p">
-          <a href="services.html"> Services</a>
+          <a href="/services.html"> Services</a>
         </p>
         <p class="footer-contact-p">
-          <a href="gallery.html"> Gallery</a>
+          <a href="/gallery.html"> Gallery</a>
         </p>
         <p class="footer-contact-p">
-          <a href="faq.html"> FAQ</a>
+          <a href="/faq.html"> FAQ</a>
         </p>
         <p class="footer-contact-p">
-          <a href="contact.html"> Contact</a>
+          <a href="/contact.html"> Contact</a>
         </p>
       </div>
 
@@ -229,5 +255,6 @@
   </footer>
 
   <script src="scripts/navbar.js"></script>
+  <script type="module" src="scripts/index.js"></script>
 </body>
 </html>

@@ -162,6 +162,79 @@ button:active{
 .features-container h2{
   text-align: center;
 }
+.add-skill-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* overlay add skill */
+.add-skill-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(59, 85, 124, 0.671);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  /* pointer-events: none; */
+  z-index: 9999;
+  height: 100vh;
+}
+.overlay-container{
+  background-color: white;
+  color: black;
+  padding: 24px;
+  width: 400px;
+  height: 460px;
+  border-radius: 10px;
+}
+.overlay-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid cadetblue;
+  margin-bottom: 40px;
+}
+.overlay-header h3{
+  font-family: var(--font);
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+}
+.overlay-header i{
+  cursor: pointer;
+}
+.skill-title-div,
+.skill-description-div,
+.skill-icon-div{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-bottom: 20px;
+}
+.skill-title-div label,
+.skill-description-div label,
+.skill-icon-div label{
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+}
+.skill-title-div select,
+.skill-description-div textarea,
+.skill-icon-div select{
+  padding: 15px 18px;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.skill-title-div input:focus,
+.skill-description-div textarea:focus,
+.skill-icon-div select:focus{
+  border: 1px solid var(--banner-color);
+}
 .diesel-container{
   /* margin-top: 620px; */
 }
@@ -529,7 +602,7 @@ button:active{
   }
   .vd-container video {
     height: 100vh !important;
-
+    object-fit:cover;
   }
   .overlay h2 {
     width: 500px;
@@ -731,7 +804,8 @@ button:active{
   .reasons-div {
     width: 100%;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     row-gap: 20px;
   }
   .reasons-contents p {

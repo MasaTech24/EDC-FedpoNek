@@ -40,10 +40,37 @@
         <li><a href="about.html">About</a></li>
         <li><a href="services.html" id="product-link"> Services</a></li>
         <li><a href="gallery.html" id="product-link" class="active">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
+
+        <button id="js-sign-in-mobile"  class="cta-sign-in-mobile">Sign In</button>
+
+        <button id="js-sign-out-mobile" class="cta-sign-out-mobile">Sign Out</button>
+        
       </ul>
     </nav>
+
+    <button id="js-sign-in" class="cta-sign-in">Sign In</button>
+
+    <div id="js-popped-up" class="profile-pop-up-container">
+      <i class="nav-fa-user fa-solid fa-user" onclick="
+        const profilePopup = document.getElementById('js-pop-up')
+        profilePopup.classList.toggle('pop-up')
+        "></i>
+
+      <div class="profile-pop-up" id="js-pop-up">
+        <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+          <p id="js-user-dispaly-fullname">Full Name</p>
+        </div>
+
+         <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+           <p id="js-user-email">user1@gmaiddddddl.com</p>
+         </div>
+        <button id="js-sign-out" style="display: flex; align-items: center; justify-content: center;">Sign Out</button>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -179,22 +206,22 @@
           Quick Links
         </h1>
         <p class="footer-contact-p">
-          <a href="index.html"> Home</a>
+          <a href="/index.html"> Home</a>
         </p>
         <p class="footer-contact-p">
-          <a href="about.html"> About Us</a>
+          <a href="/about.html"> About Us</a>
         </p>
         <p class="footer-contact-p">
-          <a href="services.html"> Services</a>
+          <a href="/services.html"> Services</a>
         </p>
         <p class="footer-contact-p">
-          <a href="gallery.html"> Gallery</a>
+          <a href="/gallery.html"> Gallery</a>
         </p>
         <p class="footer-contact-p">
-          <a href="faq.html"> FAQ</a>
+          <a href="/faq.html"> FAQ</a>
         </p>
         <p class="footer-contact-p">
-          <a href="contact.html"> Contact</a>
+          <a href="/contact.html"> Contact</a>
         </p>
       </div>
 
@@ -257,5 +284,6 @@
 
   <script src="scripts/navbar.js"></script>
   <script src="scripts/gallery.js"></script>
+  <script type="module" src="scripts/index.js"></script>
 </body>
 </html>
