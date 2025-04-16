@@ -86,7 +86,7 @@ function handleUserData(user) {
       localStorage.setItem("userId", data.uid); 
       console.log(localStorage.setItem("userId", data.uid))
       // sendOTP();  
-      window.location.replace("/index.html");
+      window.location.replace("index.html");
     }else{
       alert('Account Not found');  
     }
