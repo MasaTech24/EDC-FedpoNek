@@ -22,18 +22,19 @@
     <div class="brand">
       <a href="index.html">
         <!-- <img src="images/dunav logo.svg" alt=""> -->
-        <span class="logo">EDC</span>
-        <span class="mobile-logo"> FedpoNek</span>
+        <!-- <span class="logo">EDC</span>
+        <span class="mobile-logo"> FedpoNek</span> -->
+        <img src="images/nekedelogo.png" alt="">
       </a>
     </div>
 
     <div class="menu-icon" id="js-menu-icon">
-      <i class="fa-solid fa-bars fa-2x " style="color: #051924"></i>
+      <i class="fa-solid fa-bars fa-2x " style="color: #ffff"></i>
     </div>
 
     <nav id="js-navbar" >
       <div class="cancel-icon" id="js-cancel-icon">
-        <i class="fa-solid fa-xmark fa-3x" style="color: #051924;" ></i>
+        <i class="fa-solid fa-xmark fa-3x" style="color: #ffff;" ></i>
       </div>
       <ul id="navbar">
         <li><a href="index.html">Home</a></li>
@@ -97,7 +98,7 @@
 
           <div class="card js-filter-img" data-name="digital">
             <div class="img-div">
-              <img src="images/digital.jpg" alt="digital skill"/>
+              <img src="images/digital.jpeg" alt="digital skill"/>
             </div>
             <div class="card-content">
               <p>Digital Skills Training Session</p>
@@ -106,7 +107,7 @@
 
           <div class="card js-filter-img" data-name="business">
             <div class="img-div">
-              <img src="images/tailor.jpg" alt="digital skill"/>
+              <img src="images/tailor.jpeg" alt="digital skill"/>
             </div>
             <div class="card-content">
               <p>Business Workshop</p>
@@ -115,7 +116,7 @@
 
           <div class="card js-filter-img" data-name="entrepreneurship">
             <div class="img-div">
-              <img src="images/workshop3.jpg" alt="digital skill"/>
+              <img src="images/workshop3.jpeg" alt="digital skill"/>
             </div>
             <div class="card-content">
               <p>Entrepreneurship Workshop</p>
@@ -124,7 +125,7 @@
 
           <div class="card js-filter-img" data-name="photography">
             <div class="img-div">
-              <img src="images/photography1.jpg" alt="digital skill"/>
+              <img src="images/photography1.jpeg" alt="digital skill"/>
             </div>
             <div class="card-content">
               <p>Photography Training</p>
@@ -133,7 +134,7 @@
 
           <div class="card js-filter-img" data-name="design">
             <div class="img-div">
-              <img src="images/web.jpg" alt="digital skill"/>
+              <img src="images/web.jpeg" alt="digital skill"/>
             </div>
             <div class="card-content">
               <p>Website Development Class</p>
@@ -142,7 +143,7 @@
 
           <div class="card js-filter-img" data-name="business">
             <div class="img-div">
-              <img src="images/thread.jpg" alt="digital skill"/>
+              <img src="images/thread.jpeg" alt="digital skill"/>
             </div>
             <div class="card-content">
               <p>E-commerce Training</p>
@@ -151,7 +152,7 @@
 
           <div class="card js-filter-img" data-name="business">
             <div class="img-div">
-              <img src="images/workshop.jpg" alt="digital skill"/>
+              <img src="images/workshop.jpeg" alt="digital skill"/>
             </div>
             <div class="card-content">
               <p>Business Planning Session</p>
@@ -160,7 +161,7 @@
 
           <div class="card js-filter-img" data-name="entrepreneurship">
             <div class="img-div">
-              <img src="images/students.jpg" alt="digital skill"/>
+              <img src="images/students (1).jpeg" alt="digital skill"/>
             </div>
             <div class="card-content">
               <p>Student Collaboration</p>
@@ -169,7 +170,7 @@
 
           <div class="card js-filter-img" data-name="digital">
             <div class="img-div">
-              <img src="images/digital2.jpg" alt="digital skill"/>
+              <img src="images/business.jpg" alt="digital skill"/>
             </div>
             <div class="card-content">
               <p>Business Analysis Training</p>
@@ -183,19 +184,95 @@
       <div class="upload-container">
         <h2>Share Your Success</h2>
         <p>Are you a department or unit in the Entrepreneurship Development Center? Upload photos and videos of your training sessions, student projects, and success stories.</p>
-        <button onclick="alert('Contact School Admin to upload')">Upload</button>
+        <button id="js-upload-gallery">Upload</button>
       </div>
     </section>
     
+
+    <div class="add-skill-overlay" id="js-gallery-popup">
+      <div class="overlay-container">
+        <div class="overlay-header">
+          <h3>Add New Gallery</h3>
+          <i class="fa-solid fa-xmark" id="js-close-gallery-icon"></i>
+        </div>
+
+        <form id="upload-gallery-form">
+          <div class="skill-title-div">
+            <label>Categories*</label>
+            <!-- <input type="text" placeholder="Web Development, Leadership, etc"> -->
+            <select id="gallery-select">
+              <option value="Hospitality & Catering">Hospitality & Catering</option>
+              <option value="Spice Production">Spice Production</option>
+              <option value="Electrical Installation">Electrical Installation</option>
+              <option value="Tv Satelite Installation & Maintenance">Tv Satelite Installation & Maintenance</option>
+              <option value="Binding & Lithography">Binding & Lithography</option>
+              <option value="Screen Printing">Screen Printing</option>
+              <option value="Computer Networking">Computer Networking</option>
+              <option value="Generator Repair/Maintenance">Generator Repair/Maintenance</option>
+              <option value="Computer Maintenance">Computer Maintenance</option>
+              <option value="Fabric Design/Tie& Dye Batrik">Fabric Design/Tie& Dye Batrik</option>
+              <option value="Computer Dided Design">Computer Dided Design</option>
+              <option value="Land Scaping: Floor treatment, Increte, Polishing, Kepe, Interlock, Floor Maintenance">Land Scaping: Floor treatment, Increte, Polishing, Kepe, Interlock, Floor Maintenance</option>
+              <option value="Animal Health and Production Technology">Animal Health and Production Technology</option>
+              <option value="Cosmetology, Chemical & Allied Products">Cosmetology, Chemical & Allied Products</option>
+              <option value="Leather Works">Leather Works</option>
+              <option value="Polish Production">Polish Production</option>
+              <option value="CCTV/Security Camera/Networking">CCTV/Security Camera/Networking</option>
+              <option value="Foam Production">Foam Production</option>
+              <option value="Electronics Maintenance">Electronics Maintenance</option>
+              <option value="Airconditioning/Refrigeration Repair">Airconditioning/Refrigeration Repair</option>
+              <option value="Hair Dressing, Preparation and Beauty Therapy/Hat making/Turban Fascinator">Hair Dressing, Preparation and Beauty Therapy/Hat making/Turban Fascinator</option>
+              <option value="Phone Repair/Maintenance">Phone Repair/Maintenance</option>
+              <option value="Photograph & Video Coverage">Photograph & Video Coverage</option>
+              <option value="Barbing">Barbing</option>
+              <option value="Music -Entertainment (Rapping/MC/DJ)">Music -Entertainment (Rapping/MC/DJ)</option>
+              <option value="Decoration /Event Management">Decoration /Event Management</option>
+              <option value="Fresh Fruit Juice Production">Fresh Fruit Juice Production</option>
+              <option value="Ice Cream">Ice Cream</option>
+              <option value="Beverage Production">Beverage Production</option>
+              <option value="Ceramics Production">Ceramics Production</option>
+              <option value="Nylon Production">Nylon Production</option>
+              <option value="Solar Panel Installation">Solar Panel Installation</option>
+              <option value="Battery Cage Production">Battery Cage Production</option>
+              <option value="Flour Production & Processing">Flour Production & Processing</option>
+              <option value="Confectionaries">Confectionaries</option>
+              <option value="Bread Production">Bread Production</option>
+              <option value="Bead Making/Knitting">Bead Making/Knitting</option>
+              <option value="Automobile Maintenance Using Modern Tech">Automobile Maintenance Using Modern Tech</option>
+              <option value="Auto Security Tracking">Auto Security Tracking</option>
+              <option value="Fashion Design/Tailoring">Fashion Design/Tailoring</option>
+              <option value="Decoration /Event Management">Decoration /Event Management</option>
+              <option value="Web Design, Hosting">Web Design, Hosting</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="Paint Production">Paint Production</option>
+              <option value="Web & Mobile App">Web & Mobile App</option>
+            </select>
+          </div>
+
+          <div class="skill-description-div">
+            <label>Description*</label>
+            <textarea id="description-gallery" placeholder="Describe your image to upload and experienced"></textarea>
+          </div>
+
+          <div class="skill-icon-div">
+            <label>Image*</label>
+           
+            <input type="file" placeholder="Upload Image" id="input-img" accepts="image/*">
+          </div>
+
+          <button type="submit">Save Gallery</button>
+        </form>
+      </div>
+    </div>
   </main>
 
   <!-- footer section of this page  -->
   <footer class="footer-container">
     <div class="footer-div">
       <div class="footer-card1">
-        <h1> 
-        EDC FedpoNek
-        </h1>
+        <a href="index.html">
+          <img src="images/nekedelogo.png" alt="">
+        </a>
         <p class="footer-contact-p">
           The Entrepreneurship Development Center at Federal Polytechnic Nekede empowers students with practical skills and knowledge for successful business ventures.
         </p>
