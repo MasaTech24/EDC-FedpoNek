@@ -3,7 +3,7 @@
   margin: 0;
 }
 :root{
-  --header-background: hsl(221, 83%, 53%) ;
+  --header-background: #EE6B1F;
   --header-color: white;
   --header-font-size: 22px;
   --header-font-weight: 500;
@@ -12,12 +12,12 @@
   /* --main-sign-in-color: rgba(81, 85, 85, 1); */
   --main-sign-in-font-size: 25px;
   --main-sign-in-font-weight: 500;
-  --main-background-color: rgba(245, 246, 247, 1);
+  --main-background-color: rgb(255, 251, 235);
 
   --form-label-font-weight: 400;
   --form-label-font-size: 14px;
   --form-label-color: rgba(128,124, 124, 1);
-  --form-link-color: hsl(221, 83%, 53%) ;
+  --form-link-color: #EE6B1F ;
   --form-link-font-weight: 700;
   --form-button-font-size: 15px;
 

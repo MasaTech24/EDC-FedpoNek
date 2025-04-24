@@ -5,8 +5,8 @@
 }
 :root{
   --color: #34495E ;
-  --bg: #F4F6F6 ;
-  --banner-color: hsl(221, 83%, 53%) ;
+  --bg: rgb(255, 251, 235) ;
+  --banner-color: #EE6B1F ;
   --font: "Roboto", sans-serif;
 }
 html,
@@ -14,6 +14,7 @@ body{
   max-width: 100%;
   overflow-x: none;
   color: white;
+  background: rgb(255, 251, 235);
 }
 section,
 footer{
@@ -21,11 +22,11 @@ footer{
 }
 
 .gallery-hero-section{
-  background-color: var(--banner-color);
-  background-image:
+  background-color: #EE6B1F;
+  /* background-image:
     linear-gradient(
-      hsl(221, 83%, 53%), #000000
-    );
+      hsl(221, 83%, 53%), yellow
+    ); */
   box-sizing: border-box ;
   height: 60vh;
   margin-top: 120px;
@@ -89,7 +90,7 @@ footer{
   font-style: normal;
   font-weight: 600;
   font-size: 14px; 
-  background-color: var(--banner-color);
+  background-color: #EE6B1F;
   color: var(--bg);
 }
 .gallery-filler button{
@@ -156,7 +157,7 @@ footer{
 
 
 .upload-section{
-  background-color: var(--bg);
+  background-color: var(--);
 }
 .upload-container h2{
   color: black;

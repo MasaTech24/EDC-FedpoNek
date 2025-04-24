@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-
-import { getAuth } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";  
+import * as firebaseAuthJs from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";  
 import { getDatabase} from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";  
+import {getStorage} from "https://www.gstatic.com/firebasejs/11.4.0/firebase-storage.js"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -15,6 +15,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);  
+const auth = firebaseAuthJs.getAuth(app);  
 const database = getDatabase(app); 
-export { auth, database };
+const storage = getStorage(app); 
+export { auth, database, storage };

@@ -5,6 +5,9 @@ const inpselectSkill = document.getElementById('skill-select');
 const inpDescription = document.getElementById('description-inp');
 const inpselectIcon = document.getElementById('icon-select');
 
+const skillList = document.getElementById('skills-list');
+
+
 let selectedIcon = null
 
 closeIcon.addEventListener('click', handleCloseSkill)
@@ -12,4 +15,3 @@ closeIcon.addEventListener('click', handleCloseSkill)
 function handleCloseSkill() {
   skilPopUp.style.display = 'none'
 }
-

@@ -1,5 +1,6 @@
-import { auth, database } from './firebase.js';
+import { auth, database, storage } from './firebase.js';
 import { ref, onValue, push, set} from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+import {ref as storageRef, uploadBytes, getDownloadURL} from "https://www.gstatic.com/firebasejs/11.4.0/firebase-storage.js"
 
 window.onload = () => {
   const saveLoggedIn = sessionStorage.getItem('isLoggedIn');
@@ -11,18 +12,27 @@ window.onload = () => {
 }
 
 const getStartedBtn = document.getElementById('js-get-started');
+
 const signInBtn = document.getElementById('js-sign-in');
 const mobileSignInBtn = document.getElementById('js-sign-in-mobile');
 const signOutBtn = document.getElementById('js-sign-out');
 const mobileSignOutBtn = document.getElementById('js-sign-out-mobile');
+
 const popUp = document.getElementById('js-popped-up');
+const galleryPopUp = document.getElementById('js-gallery-popup');
+
+const skillRef = ref(database, 'skills');
 const addSkillBtn = document.getElementById('js-add-skill');
 const skilPopUp = document.getElementById('js-popup');
 const addSkillForm = document.getElementById('add-skills-form');
-const skillList = document.getElementById('skills-list')
+const skillList = document.getElementById('skills-list');
 
+const uploadGalleryForm = document.getElementById('upload-gallery-form');
+
+const uploadGalleryBtn = document.getElementById('js-upload-gallery');
 
 document.addEventListener('DOMContentLoaded', ()=> {
+
   const userId = localStorage.getItem("userId");
 
   if(getStartedBtn){
@@ -54,8 +64,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     onValue(userRef, (snapshot) => {
       const data = snapshot.val();  
       if (data) {
-        // console.log(data.email)
-        document.getElementById('js-user-dispaly-fullname').textContent = data.fullname; 
+        console.log(document.getElementById('js-user-dispaly-fullname').textContent = data.fullname);
         document.getElementById('js-user-email').textContent = data.email; 
       }else {  
         console.log('No user data found.');   
@@ -113,6 +122,22 @@ export default function updateUI(user){
       }
     }
   }
+
+  if(uploadGalleryBtn){
+    if(user){
+      uploadGalleryBtn.onclick = () => handleUploadGallery();
+      uploadGalleryForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleSaveGallery();
+      })
+    }else{
+      uploadGalleryBtn.onclick = () => {
+        alert("Sign In to upload to gallery");
+        window.location.href = 'sign-in.html'
+      }
+
+    }
+  }
 }
 
 // sign in function
@@ -131,6 +156,7 @@ function signOutUser(){
     console.error('Error signing Out:', error.message);
   })
 }
+
 function redirectToUserSkill(userId) {
   window.location.href = 'services.html'
 }
@@ -139,14 +165,18 @@ function handleAddSkill() {
   skilPopUp.style.display = 'flex';
 }
 
+function handleUploadGallery() {
+  galleryPopUp.style.display = 'flex';
+}
+
 function handleSaveSkills(e) {
   e.preventDefault();
   const skill = inpselectSkill.value.trim();
   const description = inpDescription.value.trim();
   const icon = inpselectIcon.value.trim();
-  console.log(skill)
-  console.log(description)
-  console.log(icon)
+  // console.log(skill)
+  // console.log(description)
+  // console.log(icon)
 
   if(!skill || !description || !icon){
     alert('Please fill all the fields');  
@@ -172,7 +202,6 @@ function handleSaveSkills(e) {
 }
 
 function renderSkills(){
-  const skillRef = ref(database, 'skills');
   onValue(skillRef, (snapshot) =>{
     skillList.innerHTML = '';
     const skills = snapshot.val();
@@ -198,5 +227,39 @@ function renderSkills(){
   });
 };
 
+renderSkills();
 
-renderSkills()
+// async function handleSaveGallery() {
+//   const categories = caterogries.value.trim();
+//   const description = gellreyDescription.value.trim();
+//   const image = uploadImgInput.files[0];
+//   // console.log(skill)
+//   // console.log(description)
+//   // console.log(icon)
+
+//   if(!categories || !description || !image){
+//     alert('Please fill all the fields');  
+//     return;
+//   }
+
+//   try{
+//     const imgRef = storageRef(database, `images/${image.name}`);
+//     await uploadBytes(imgRef, image);
+
+//     const url = await getDownloadURL(imgRef);
+
+//     const galleryRef = databaseRef(database, 'galleries/');
+//     const newGalleryRef = push(galleryRef);  
+//     await set(newGalleryRef, {  
+//       image: image.name,  
+//       url: url,  
+//       category: category,  
+//       description: description,  
+//       timestamp: Date.now()  
+//     }); 
+//     uploadGalleryForm.reset();  
+//   } catch (error) {  
+//     console.error(error);  
+//   } 
+// }
+

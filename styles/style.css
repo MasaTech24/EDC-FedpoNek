@@ -5,8 +5,8 @@
 }
 :root{
   --color: #34495E ;
-  --bg: #F4F6F6 ;
-  --banner-color: hsl(221, 83%, 53%) ;
+  --bg: rgb(255, 251, 235) ;
+  --banner-color: #EE6B1F;
   --font: "Roboto", sans-serif;
 } 
 html, 
@@ -51,7 +51,7 @@ video{
   flex-direction: column;
   row-gap: 20px;
   /* background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)); */
-  background-color: rgba(59, 85, 124, 0.671);
+  background-color: rgba(124, 90, 59, 0.637);
   background-size: auto, cover;
   background-position: 0% 0%, 50% 0%;
   width: 100%;
@@ -84,7 +84,55 @@ video{
   color: var(--bg);
   font-family: var(--font);
   font-weight: 600;
+  animation: headingAni 2s ease-in 0s 1 normal none;
 }
+/* Copy this code after the above code */
+@keyframes headingAni {
+  0% {
+	animation-timing-function: ease-in;
+	opacity: 1;
+	transform: translateY(-45px);
+  }
+
+  24% {
+	opacity: 1;
+  }
+
+  40% {
+	animation-timing-function: ease-in;
+	transform: translateY(-24px);
+  }
+
+  65% {
+	animation-timing-function: ease-in;
+	transform: translateY(-12px);
+  }
+
+  82% {
+	animation-timing-function: ease-in;
+	transform: translateY(-6px);
+  }
+
+  93% {
+	animation-timing-function: ease-in;
+	transform: translateY(-4px);
+  }
+
+  25%,
+  55%,
+  75%,
+  87% {
+	animation-timing-function: ease-out;
+	transform: translateY(0px);
+  }
+
+  100% {
+	animation-timing-function: ease-out;
+	opacity: 1;
+	transform: translateY(0px);
+  }
+}
+
 #surverqur-overlay .contents-h2{
   font-size: 35px;
   font-family: var(--font);
@@ -113,6 +161,7 @@ video{
   /* margin-bottom: 30px; */
   cursor: pointer;
 }
+
 .home-btn{
   margin-top: 10px;
 }
@@ -123,7 +172,7 @@ video{
   column-gap: 20px;
 }
 button{
-  background-color: var(--banner-color);
+  background-color: #EE6B1F;
   color: #FFFFFF;
   display: flex;
   align-items: center;
@@ -222,13 +271,14 @@ button:active{
   font-weight: 600;
   font-style: normal;
 }
-.skill-title-div select,
+.skill-title-div select,  
 .skill-description-div textarea,
 .skill-icon-div select{
   padding: 15px 18px;
   outline: none;
   border-radius: 10px;
   border: 1px solid black;
+  cursor: pointer;
 }
 .skill-title-div input:focus,
 .skill-description-div textarea:focus,
@@ -263,6 +313,8 @@ button:active{
   width: 460px;
   margin-bottom: 20px;
 }
+
+
 .features-contents{
   display: flex;
   flex-direction: column;
@@ -280,9 +332,11 @@ button:active{
 }
 .features-cards{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  column-gap: 20px;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: 30px;
   margin-bottom: 40px;
 }
 .card1,
@@ -375,8 +429,26 @@ button:active{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  column-gap: 150px;
+  /* width: 600px; */
+  /* padding: 1rem; */
+  column-gap: 100px;
+}
+.image-div{
+  display: flex;
+  column-gap: 30px;
+}
+.why-choose-us-row div img{
+  object-fit: cover;
+  height: 300px;
+  border-radius: 10px;
+  /* width: 500px; */
+}
+.image-div div p{
+  font-family: var(--font);
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  text-align: center;
 }
 .our-story-row{
   flex-direction: row-reverse;
@@ -420,7 +492,7 @@ button:active{
 }
 .col,
 .why-choose-us-col{
-  width: 600px;
+  width: 635px;
   overflow: hidden;
 }
 .why-choose-us-contents,
@@ -519,7 +591,7 @@ button:active{
 
 /* section six support page  */
 .footer-container{
-  background-color: var(--banner-color);
+  background-color: #020d19;
   color: var(--color) !important;  
 }
 .support-div{
@@ -866,6 +938,8 @@ button:active{
   }
   .col, .why-choose-us-col {
     width:100%;
+    flex-direction: column;
+    row-gap: 20px;
   }
   .refinery-img-div{
     width: 100%;
