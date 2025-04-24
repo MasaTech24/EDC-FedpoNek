@@ -391,9 +391,9 @@ async  function updateUser(e){
     console.log('User balance updated successfully');
 
     document.getElementById('update-user-form').reset();
-    document.getElementById('update-user-overlay').style.display = 'none';
-    document.getElementById('update-user-overlay').style.opacity = '0';
-    delete document.getElementById('update-user-overlay').dataset.userId; // Clean up
+    document.getElementById('update-skill-overlay').style.display = 'none';
+    document.getElementById('update-skill-overlay').style.opacity = '0';
+    delete document.getElementById('update-skill-overlay').dataset.userId; // Clean up
   }catch (error) {
     console.error('Error updating user balance:', error);
   }
