@@ -213,7 +213,7 @@ nav ul li a:hover::before {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color:var(--banner-color);
+    background-color:#EE6B1F;
   }
   .active::after {
     width: 100%;
