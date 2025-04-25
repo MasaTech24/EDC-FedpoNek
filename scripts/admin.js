@@ -1,6 +1,5 @@
 import { auth, database } from './firebase.js'; 
-// import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";  
-import { ref, set, onValue, push, get, runTransaction, update, remove, equalTo, orderByChild, query  } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";  
+import { ref, set, onValue, push, get, update, remove  } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";  
 
 
 // const totalUsersRef = ref(database, 'totalUsers');

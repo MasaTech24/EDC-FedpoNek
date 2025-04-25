@@ -29,7 +29,7 @@ function createAccount(e) {
       createdAt: new Date().toISOString()
     })
     .then(() => {
-     alert('User details saved successfully.');  
+     alert('You have successfully created an account.');  
       createAccForm.reset()
       window.location.href = 'sign-in.html';
     })

@@ -15,14 +15,11 @@ auth.onAuthStateChanged((user) => {
     // handleUserData(user)
   } else {  
     console.log('No user is signed in.');  
-    // You can redirect to a login page or display a message  
   }  
 });  
 
 
-function handleSignIn(e) {
-  e.preventDefault();
-
+function handleSignIn() {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const signInBtn = document.getElementById('sign-btn');
@@ -34,7 +31,7 @@ function handleSignIn(e) {
   .then((userCredential) => {
 
     const user = userCredential.user;
-    alert(`Welcome back, ${user.fullname || user.email}!`);
+    // alert(`Welcome back, ${user.fullname || user.email}!`);
     localStorage.setItem('userId', user.uid);
     window.location.href = 'index.html';
     sessionStorage.setItem('isLoggedIn', 'true');
@@ -97,5 +94,8 @@ function handleUserData(user) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  signIn.addEventListener('submit', handleSignIn)
+  signIn.addEventListener('submit', (e) => {
+    e.preventDefault();
+    handleSignIn();
+  })
 })
