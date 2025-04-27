@@ -31,17 +31,28 @@
       color: white;
       /* position: absolute; */
       /* margin-top: 600px; */
+      overflow: hidden;  
+      position: relative;
     }
+
+    .swiper-wrapper {  
+      display: flex;  
+      width: 400%;
+      transition: transform 0.6s ease;  
+      height: 100%;  
+    } 
 
     .swiper-slide {
       text-align: center;
       font-size: 18px;
-      /* background: #fff0; */
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
+      transition: transform 0.6s ease;  
+      position: relative;  
+
     }
 
     .swiper-slide img {
@@ -129,10 +140,61 @@
     <section class="home-page">
       <!-- Swiper -->
       <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" >
+        <div class="swiper-wrapper" id="swiper-wrapper">
+          <div class="swiper-slide">
             <img src="images/office.jpg" alt="" class="home-img">  
-                      
+            
+            <div class="overlay">
+              <h2>Entrepreneurship Development Center <br>
+                <span style="background: #020d19;
+                background: linear-gradient(to right, #020d19 35%, #EE6B1F 65%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;">Federal Polytechnic Nekede</span></h2>
+              <p>Transforming ideas into successful businesses through practical skills, innovation, and hands-on training for students and aspiring entrepreneurs.</p>
+              <!-- <p> Owerri, Imo State</p> -->
+               <div class="btn-container">
+                <button class="js-abt" id="js-get-started">Get Started</button>
+               </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/rectior2.jpg" alt="" class="home-img">  
+            
+            <div class="overlay">
+              <h2>Entrepreneurship Development Center <br>
+                <span style="background: #020d19;
+                background: linear-gradient(to right, #020d19 35%, #EE6B1F 65%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;">Federal Polytechnic Nekede</span></h2>
+              <p>Transforming ideas into successful businesses through practical skills, innovation, and hands-on training for students and aspiring entrepreneurs.</p>
+              <!-- <p> Owerri, Imo State</p> -->
+               <div class="btn-container">
+                <button class="js-abt" id="js-get-started">Get Started</button>
+               </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/serious1.jpg" alt="" class="home-img">  
+            
+            <div class="overlay">
+              <h2>Entrepreneurship Development Center <br>
+                <span style="background: #020d19;
+                background: linear-gradient(to right, #020d19 35%, #EE6B1F 65%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;">Federal Polytechnic Nekede</span></h2>
+              <p>Transforming ideas into successful businesses through practical skills, innovation, and hands-on training for students and aspiring entrepreneurs.</p>
+              <!-- <p> Owerri, Imo State</p> -->
+               <div class="btn-container">
+                <button class="js-abt" id="js-get-started">Get Started</button>
+               </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/evening-block.jpg" alt="" class="home-img">  
+            
             <div class="overlay">
               <h2>Entrepreneurship Development Center <br>
                 <span style="background: #020d19;
@@ -390,23 +452,37 @@
   <script type="module" src="scripts/index.js"></script>
 
 
-  <!--Start of Tawk.to Script-->
   <script type="text/javascript">
+    const swiperWrapper = document.getElementById('swiper-wrapper');  
+    const totalSlides = swiperWrapper.children.length;  
+    let currentIndex = 0;  
+
+    function nextSlide() {  
+      currentIndex++;  
+      if (currentIndex >= totalSlides) {  
+        currentIndex = 0;  
+      }  
+      const translateXPercent = -(100 / totalSlides) * currentIndex;  
+      swiperWrapper.style.transform = `translateX(${translateXPercent}%)`;  
+    }  
+
+    // Change slide every 4 seconds  
+    setInterval(nextSlide, 4000);  
+
+    // <!--Start of Tawk.to Script-->
+    // <!--End of Tawk.to Script-->
+
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
     s1.async=true;
-    s1.src='https://embed.tawk.to/67cc8dc96edcd71910a35623/1ilricrij';
+    s1.src='https://embed.tawk.to/680e64a6be6663190a6c0104/1ips3icbv';
     s1.charset='UTF-8';
     s1.setAttribute('crossorigin','*');
     s0.parentNode.insertBefore(s1,s0);
     })();
+
   </script>
-  <!--End of Tawk.to Script-->
 
-  <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
-  <script src="https://static.elfsight.com/platform/platform.js" async></script>
-
-  <div class="elfsight-app-52ec13b8-24dc-4194-9d05-109fa68e6cb7" data-elfsight-app-lazy></div>
 </body>
 </html>
